@@ -1,0 +1,5 @@
+export * from './Home'
+export * from './Feed'
+export * from './Add'
+export * from './Likes'
+export * from './Profile'
