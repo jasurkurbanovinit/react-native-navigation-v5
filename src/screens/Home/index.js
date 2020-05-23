@@ -23,6 +23,11 @@ const Home = ({navigation}) => {
                 onPress={() => onScreen('Feed',
                     navigation, {itemId: 86,otherParam: 'anything you want here'})()}
             />
+
+            <Button
+                title="Create Custom profile header"
+                onPress={() => onScreen('Feed', navigation, { name: 'Custom profile header' })()}
+            />
         </View>
     );
 };
