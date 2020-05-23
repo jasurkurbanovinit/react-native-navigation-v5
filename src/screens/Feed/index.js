@@ -2,10 +2,18 @@ import React, {} from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
 import {onScreen} from "../../constants";
 
-const Feed = ({navigation}) => {
+const Feed = ({route, navigation}) => {
+    const { itemId, otherParam,post} = route.params;
+
     return (
         <View style={styles.container}>
             <Text>Hello Feed</Text>
+            <Text>Message from Home</Text>
+            <Text>itemId: {JSON.stringify(itemId)}</Text>
+            <Text>otherParam: {JSON.stringify(otherParam)}</Text>
+
+            <Text>From form</Text>
+            <Text>Post=>{post}</Text>
             <Button
                 title="Go to Add"
                 onPress={() => onScreen("Add", navigation)()}
