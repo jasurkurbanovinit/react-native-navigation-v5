@@ -1,10 +1,16 @@
 import React, {} from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
-import {onScreen} from "../../constants";
+import {goBack, onScreen} from "../../constants";
 
 const Feed = ({route, navigation}) => {
     const { itemId, otherParam,post} = route.params;
-
+    React.useLayoutEffect(() => {
+        navigation.setOptions({
+            headerLeft: () => (
+                <Button onPress={()=> goBack(navigation)()} title="Go Back" />
+            ),
+        });
+    }, [navigation]);
     return (
         <View style={styles.container}>
             <Text>Hello Feed</Text>

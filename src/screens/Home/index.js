@@ -4,8 +4,20 @@ import {onScreen} from "../../constants";
 
 const Home = ({navigation}) => {
     const [postText, setPostText] = React.useState('');
+    const [count, setCount] = React.useState(0);
+
+    React.useLayoutEffect(() => {
+        navigation.setOptions({
+            headerRight: () => (
+                <Button onPress={() => setCount(c => c + 1)} title="Update count" />
+            ),
+        });
+    }, [navigation, setCount]);
+
     return (
         <View style={styles.container}>
+            <Text>Header Control</Text>
+            <Text>Count: {count}</Text>
             <Text>Hello Home</Text>
                 <TextInput
                     multiline

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, Image} from 'react-native';
+import { View, Text, Image, Button} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {Home, Feed, Add, Profile, Likes} from './src/screens'
@@ -27,7 +27,16 @@ export default function App() {
                       fontWeight: 'bold',
                   },
               }}>
-              <Stack.Screen name="Home" component={Home}/>
+              <Stack.Screen name="Home" component={Home}
+                            options={{
+                                headerTitle: props => <LogoTitle {...props} />,
+                                headerRight: () => (
+                                    <Button
+                                        onPress={() => alert('This is a button!')}
+                                        title="Info"
+                                    />
+                                ),
+                            }}/>
               <Stack.Screen name="Feed" component={Feed}
                             options={({ route }) => ({ title: route.params.name })}/>
               <Stack.Screen name="Add" component={Add}
