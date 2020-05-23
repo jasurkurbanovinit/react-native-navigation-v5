@@ -1,10 +1,15 @@
 import React, {} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Button} from 'react-native';
+import {onScreen} from "../../constants";
 
-const Feed = () => {
+const Feed = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Text>Hello Feed</Text>
+            <Button
+                title="Go to Add"
+                onPress={() => onScreen("Add", navigation)()}
+            />
         </View>
     );
 };
